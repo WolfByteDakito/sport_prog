@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Programme Sportif Complet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 18px;
+            height: 100%;
+            width: 4px;
+            background: #e2e8f0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: -1px;
+            top: 5px;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background: white;
+            border: 4px solid #665191;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003f5c] mb-2">Mon Programme Sportif Complet</h1>
+            <p class="text-xl text-slate-600">Objectif : Prise de muscle & Perte de gras</p>
+        </header>
+        
+        <main>
+            
+            <section id="piliers" class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#003f5c]">Les Piliers de la Réussite</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <span class="text-4xl">🍎</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2 text-[#003f5c]">Nutrition</h3>
+                        <p class="text-slate-600">Essentielle pour fournir l'énergie et les nutriments nécessaires à la croissance et à la récupération.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <span class="text-4xl">💧</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2 text-[#003f5c]">Hydratation</h3>
+                        <p class="text-slate-600">Cruciale pour la performance, la fonction musculaire et la santé globale.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <span class="text-4xl">😴</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2 text-[#003f5c]">Sommeil</h3>
+                        <p class="text-slate-600">Période clé où le corps se répare et construit du muscle. Viser 7-9 heures.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <span class="text-4xl">🏋️</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2 text-[#003f5c]">Progression</h3>
+                        <p class="text-slate-600">Augmenter progressivement la charge pour forcer le corps à s'adapter et à devenir plus fort.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="planning" class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#003f5c]">Mon Planning Hebdomadaire</h2>
+                <div class="bg-white p-6 rounded-lg shadow-lg overflow-x-auto">
+                    <div class="grid grid-cols-7 gap-2 text-center min-w-[600px]">
+                        <div class="font-bold">Lundi</div>
+                        <div class="font-bold">Mardi</div>
+                        <div class="font-bold">Mercredi</div>
+                        <div class="font-bold">Jeudi</div>
+                        <div class="font-bold">Vendredi</div>
+                        <div class="font-bold">Samedi</div>
+                        <div class="font-bold">Dimanche</div>
+                        
+                        <div class="bg-[#003f5c] text-white p-3 rounded-lg">Upper 1</div>
+                        <div class="bg-[#665191] text-white p-3 rounded-lg">Lower</div>
+                        <div class="bg-[#003f5c] text-white p-3 rounded-lg">Upper 2</div>
+                        <div class="bg-slate-200 p-3 rounded-lg">Repos</div>
+                        <div class="bg-[#003f5c] text-white p-3 rounded-lg">Upper 3</div>
+                        <div class="bg-green-200 p-3 rounded-lg">Repos Actif</div>
+                        <div class="bg-orange-200 p-3 rounded-lg">Séance Maison</div>
+                    </div>
+                </div>
+                <p class="text-center mt-4 text-slate-600 italic">Une répartition équilibrée pour une progression et une récupération optimales.</p>
+            </section>
+
+            <section id="programme" class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#003f5c]">Le Programme d'Entraînement</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-[#003f5c]">Jour 1: Upper Body 1</h3>
+                        <div class="chart-container mb-6"><canvas id="upper1Chart"></canvas></div>
+                        <ul class="space-y-2 text-slate-700 list-disc list-inside">
+                            <li><span class="font-semibold">Développé couché barre:</span> 3x 8-12</li>
+                            <li><span class="font-semibold">Développé incliné haltères:</span> 3x 10-15</li>
+                            <li><span class="font-semibold">Tractions / Tirage poitrine:</span> 3x 8-12</li>
+                            <li><span class="font-semibold">Rowing barre (bûcheron):</span> 3x 8-12 /bras</li>
+                            <li><span class="font-semibold">Développé militaire haltères:</span> 3x 10-15</li>
+                            <li><span class="font-semibold">Curl barre:</span> 3x 10-15</li>
+                            <li><span class="font-semibold">Extensions triceps poulie:</span> 3x 10-15</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-[#665191]">Jour 2: Lower Body</h3>
+                        <div class="chart-container mb-6"><canvas id="lowerChart"></canvas></div>
+                         <ul class="space-y-2 text-slate-700 list-disc list-inside">
+                            <li><span class="font-semibold">Squat barre:</span> 3x 8-12</li>
+                            <li><span class="font-semibold">Fentes marchées haltères:</span> 3x 10-15 /jambe</li>
+                            <li><span class="font-semibold">Soulevé de terre jambes tendues:</span> 3x 10-15</li>
+                            <li><span class="font-semibold">Leg curl machine:</span> 3x 12-15</li>
+                            <li><span class="font-semibold">Extensions mollets debout:</span> 3x 15-20</li>
+                            <li><span class="font-semibold">Crunchs:</span> 3x 15-20</li>
+                            <li><span class="font-semibold">Planche:</span> 3x 30-60s</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-[#003f5c]">Jour 3: Upper Body 2</h3>
+                        <div class="chart-container mb-6"><canvas id="upper2Chart"></canvas></div>
+                        <ul class="space-y-2 text-slate-700 list-disc list-inside">
+                            <li><span class="font-semibold">Développé haltères:</span> 3x 8-12</li>
+                            <li><span class="font-semibold">Élévations latérales haltères:</span> 3x 12-15</li>
+                            <li><span class="font-semibold">Élévations frontales haltères:</span> 3x 12-15</li>
+                            <li><span class="font-semibold">Rowing machine assis:</span> 3x 10-15</li>
+                            <li><span class="font-semibold">Pull-over haltère:</span> 3x 12-15</li>
+                            <li><span class="font-semibold">Écartés inclinés haltères:</span> 3x 12-15</li>
+                            <li><span class="font-semibold">Curl marteau:</span> 3x 10-15</li>
+                            <li><span class="font-semibold">Barre au front:</span> 3x 10-15</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-[#003f5c]">Jour 4: Upper Body 3</h3>
+                        <div class="chart-container mb-6"><canvas id="upper3Chart"></canvas></div>
+                         <ul class="space-y-2 text-slate-700 list-disc list-inside">
+                            <li><span class="font-semibold">Soulevé de terre / Rowing:</span> 3x 5-8</li>
+                            <li><span class="font-semibold">Tirage horizontal assis:</span> 3x 10-15</li>
+                            <li><span class="font-semibold">Pompes:</span> 3x max reps</li>
+                            <li><span class="font-semibold">Dips:</span> 3x 8-12</li>
+                            <li><span class="font-semibold">Face pulls:</span> 3x 12-15</li>
+                            <li><span class="font-semibold">Curl concentré:</span> 3x 10-15 /bras</li>
+                            <li><span class="font-semibold">Kickback haltère:</span> 3x 10-15 /bras</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="routine" class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#003f5c]">Ma Routine Matinale Gagnante</h2>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">⏰</div>
+                        <h4 class="font-bold text-lg">6:00 - Réveil</h4>
+                        <p class="text-slate-600">Hydratation et préparation mentale pour la journée.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🍌</div>
+                        <h4 class="font-bold text-lg">6:15 - Pré-entraînement léger</h4>
+                        <p class="text-slate-600">Une banane ou quelques amandes pour l'énergie.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🏋️‍♂️</div>
+                        <h4 class="font-bold text-lg">6:30 - Séance de sport</h4>
+                        <p class="text-slate-600">Entraînement intense et concentré dans une salle calme.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🚿</div>
+                        <h4 class="font-bold text-lg">8:00 - Douche & Post-entraînement</h4>
+                        <p class="text-slate-600">Shaker de whey/créatine et petit-déjeuner portable.</p>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon">👔</div>
+                        <h4 class="font-bold text-lg">8:30 - Début de la journée de travail</h4>
+                        <p class="text-slate-600">Énergisé et prêt à être productif.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="nutrition" class="mb-16">
+                 <h2 class="text-3xl font-bold text-center mb-10 text-[#003f5c]">Astuces Nutrition Clés</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-3 text-[#003f5c]">Petit-Déjeuner Portable</h3>
+                        <p class="text-slate-600">Après la séance, un shaker avec whey et flocons d'avoine, des barres protéinées ou des fruits sont des options rapides et efficaces pour la récupération.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-3 text-[#003f5c]">Repas à la Maison</h3>
+                        <p class="text-slate-600">Privilégier les portions de protéines (viande, poisson), de glucides complexes (riz, pâtes complètes) et remplir la moitié de l'assiette de légumes.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-3 text-[#003f5c]">Compléments</h3>
+                        <p class="text-slate-600">Prendre la whey autour de l'entraînement pour les protéines. La créatine (5g) se prend tous les jours pour maximiser la force et la performance.</p>
+                    </div>
+                 </div>
+            </section>
+        </main>
+        
+        <footer class="text-center mt-12 py-6 border-t border-slate-200">
+            <p class="text-slate-600 font-semibold">La discipline et la régularité sont les ponts entre les objectifs et la réussite.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chartColors = ['#003f5c', '#665191', '#d45087', '#ffa600', '#2f4b7c'];
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                if (!item) return '';
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                  return label.join(' ');
+                }
+                return label;
+            };
+
+            const defaultChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#334155',
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            };
+            
+            new Chart(document.getElementById('upper1Chart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Pectoraux', 'Dos', 'Épaules', 'Biceps', 'Triceps'],
+                    datasets: [{
+                        label: "Focus Musculaire",
+                        data: [2, 2, 1, 1, 1],
+                        backgroundColor: chartColors,
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: defaultChartOptions
+            });
+
+            new Chart(document.getElementById('lowerChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Quads/Fessiers', ['Ischio-', 'jambiers'], 'Mollets', 'Abdominaux'],
+                    datasets: [{
+                        label: "Focus Musculaire",
+                        data: [2, 2, 1, 2],
+                        backgroundColor: chartColors,
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: defaultChartOptions
+            });
+
+            new Chart(document.getElementById('upper2Chart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Épaules', 'Dos', 'Pectoraux', 'Biceps', 'Triceps'],
+                    datasets: [{
+                        label: "Focus Musculaire",
+                        data: [3, 2, 1, 1, 1],
+                        backgroundColor: chartColors,
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: defaultChartOptions
+            });
+
+            new Chart(document.getElementById('upper3Chart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Dos', 'Pectoraux', 'Épaules', 'Biceps', 'Triceps'],
+                    datasets: [{
+                        label: "Focus Musculaire",
+                        data: [2, 2, 1, 1, 1],
+                        backgroundColor: chartColors,
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: defaultChartOptions
+            });
+        });
+    </script>
+
+</body>
+</html>
